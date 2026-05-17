@@ -1,3 +1,4 @@
+
 // ================= THEME HELPER =================
 // Reads the selected theme radio button from the form
 function getSelectedTheme() {
@@ -51,11 +52,6 @@ openGameBtn.addEventListener("click", () => {
 
   // Stores player data in sessionStorage
   sessionStorage.setItem("player", JSON.stringify(player));
-
-  alert("Starting game for " + name);
-
-  // Navigate to game page
-  window.location.href = "game.html";
 });
 
 
@@ -127,4 +123,25 @@ loadSettingsBtn.addEventListener("click", () => {
   updatePreview();
 
   alert("Settings loaded!");
+});
+
+// ================= RESET SETTINGS =================
+// Clears the form back to defaults
+const resetSettingsBtn = document.getElementById("resetSettingsBtn");
+
+resetSettingsBtn.addEventListener("click", () => {
+
+  if (!confirm("Reset all settings to default?")) return;
+
+  document.getElementById("playerName").value = "";
+  document.getElementById("difficulty").value = "medium";
+  document.getElementById("gameLength").value = "30";
+  document.querySelector('input[name="theme"][value="classic"]').checked = true;
+  document.getElementById("soundEnabled").checked = true;
+  document.getElementById("doublePoints").checked = false;
+  document.getElementById("bonusMole").checked = true;
+
+  updatePreview();
+
+  alert("Settings reset to default!");
 });
