@@ -1,4 +1,3 @@
-
 // ================= THEME HELPER =================
 // Reads the selected theme radio button from the form
 function getSelectedTheme() {
