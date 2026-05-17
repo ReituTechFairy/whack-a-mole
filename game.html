@@ -73,12 +73,26 @@
                 <button class="mole-hole" data-index="8"><span class="mole"></span></button>
             </div>
         </section>
+    </main>
 
-        <section class="card">
+    <section class="card">
             <h2>Game Log</h2>
             <div id="logArea" class="log-area"></div>
         </section>
-    </main>
+            <!-- Change 9 HTML — End game popup, place just before </body> -->
+<div id="endGameOverlay" style="display:none;">
+  <div class="end-popup">
+    <h2>🎉 Game Over!</h2>
+    <table class="end-table">
+      <tr><td>🏆 Score</td><td id="popupScore">0</td></tr>
+      <tr><td>⭐ Best Score</td><td id="popupBest">0</td></tr>
+      <tr><td> Total Hits</td><td id="popupHits">0</td></tr>
+      <tr><td> Total Misses</td><td id="popupMisses">0</td></tr>
+    </table>
+    <button id="closeEndPopup">Play Again</button>
+  </div>
+</div>
+<!-- End Change 9 HTML -->
 
     <script src="game.js"></script>
 </body>
