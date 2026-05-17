@@ -211,6 +211,26 @@ button:disabled {
     display: block;
 }
 
+/* Change 5 — x2 indicator style */
+.x2-indicator {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: gold;
+  pointer-events: none;
+  animation: floatUp 0.8s ease forwards;
+  z-index: 999;
+}
+
+@keyframes floatUp {
+  0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-40px); }
+}
+/* End Change 5 */
+
 /*FARM THEME*/
 body[data-theme="farm"] {
   background: orange;
@@ -265,6 +285,64 @@ body[data-theme="robots"] .mole {
     padding: 14px;
     white-space: pre-line;
 }
+
+/* Change 7 CSS — End game popup styles */
+#endGameOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.end-popup {
+  background: #fff;
+  color:#111827;
+  border-radius: 16px;
+  padding: 2.5rem 3rem;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  min-width: 300px;
+  font-family: inherit;
+}
+
+.end-popup h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.end-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.end-table td {
+  padding: 0.5rem;
+}
+
+.end-table td:first-child {
+  text-align: left;
+}
+
+.end-table td:last-child {
+  font-weight: bold;
+}
+
+#closeEndPopup {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+/* End Change 7 CSS */
 
 .log-area {
     min-height: 120px;
